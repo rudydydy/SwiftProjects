@@ -44,15 +44,19 @@ struct HomeView: View {
         isOnboardingViewActive = true
       } label: {
         Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+          .font(.system(size: 25, weight: .ultraLight))
           .imageScale(.large)
+          .rotationEffect(.degrees(isAnimating ? 180 : 0))
+          .animation(.linear(duration: 2).repeatForever(autoreverses: false), value: isAnimating)
         
         Text("Restart")
-          .font(.system(.title3, design: .rounded))
+          .font(.system(.title2, design: .rounded))
           .fontWeight(.bold)
       }
       .buttonStyle(.borderedProminent)
       .buttonBorderShape(.capsule)
       .controlSize(.large)
+      .padding(.bottom, 20)
     }
     .onAppear {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {

@@ -8,8 +8,6 @@
 	<dict>
 		<key>UIColorName</key>
 		<string>ColorBlue</string>
-		<key>UIImageName</key>
-		<string>launch_icon</string>
 	</dict>
 </dict>
 </plist>

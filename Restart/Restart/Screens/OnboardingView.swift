@@ -137,6 +137,10 @@ struct OnboardingView: View {
               
               Image(systemName: "chevron.right.2")
                 .font(.system(size: 24, weight: .bold))
+                .transition(.scale)
+                .scaleEffect(isAnimating ? 1.2 : 1)
+                .animation(.easeInOut(duration: 0.5).delay(1).repeatForever(), value: isAnimating)
+                .id("sliderButton")
             }
             .foregroundColor(.white)
             .frame(width: 80, height: 80, alignment: .center)
